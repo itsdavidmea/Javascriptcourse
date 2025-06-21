@@ -1,2 +1,11 @@
-console.log(x);
-var x = 5
+
+let dict = { lucy: 'plays football', jack:'plays hockey'}
+
+
+function myDictionary() {
+    console.log(dict)
+}
+
+myDictionary()
+
+
