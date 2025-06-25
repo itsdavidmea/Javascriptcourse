@@ -1,6 +1,6 @@
-for (let i = 0; i <= 10; i++) {
-    if (i%2 != 0) {
-        continue
-    }
-    console.log(i)
+
+    let dictKeys = Object.keys(aDict)
+    let dictLength = dictKeys.length
+    let highestKey = aDict.name
+    
 }

@@ -68,3 +68,8 @@ function calculateArea (width, height) {
 
 let rectangleArea1 = calculateArea(7, 5)
 console.log(rectangleArea1)
+
+module.exports = {
+
+    calculateArea
+ }
