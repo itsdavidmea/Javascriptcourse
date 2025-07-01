@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
+
+</head>
+
+<body>
+
+    <h1 id="main-title">DOM Manipulation</h1>
+
+    <form id="form-example" onsubmit="return handleSubmitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+        <input type="submit" value="Submit" id="submit-btn">
+    </form>
+
+    <button id="open-modal-btn">Open Modal</button>
+
+    <div id="content-area"></div>
+
+    <textarea id="text-area" rows="4" cols="50">Type some text...</textarea>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+            <button id="close-modal-btn">Close Modal</button>
+        </div>
+    </div>
+    <ul id="list-container">
+
+    </ul>
+    <button id="display-time">display current time</button>
+    <h1 id="textchange">Text to be changed</h1>
+    <img src="" alt="">
+    <script>
+
+        // 1. Basic DOM Manipulation: How do you select an element with the ID main-title and 
+        // change its text content to "Welcome to the DOM World"?
+
+        let main_title = document.getElementById('main-title')
+        main_title.innerText = 'Welcome to the DOM world'
+
+        // 2. Event Handling: Write the JavaScript code to listen for a click event on 
+        // a button with the ID submit-btn and alert "Button Clicked!"
+        let clickButton = document.getElementById('submit-btn')
+        function buttonClicked () {
+            console.log('Button Clicked!')
+        }
+        //clickButton.addEventListener('click', buttonClicked())
+
+
+        // 3. Dynamic Styling: How can you change the background color of a <div> 
+        // with the class highlight to yellow when a user hovers over it using JavaScript?
+
+        let content_area = document.querySelector('#content-area')
+        content_area.style.padding = '100px'
+        content_area.style.backgroundColor ='blue'
+        content_area.addEventListener('hover', function () {
+            content_area.style.background = 'yellow'
+        })
+
+        // 4. Element Creation and Insertion: Describe how to create a new <li> element, set its text content to "New Item", 
+        // and append it to an existing <ul> with the ID list-container.
+
+        let newElement = document.createElement("li");
+        newElement.innerHTML = "<p>New Item </p>"
+        document.body.appendChild(newElement)
+        let ulTage = document.getElementById('list-container')
+        ulTage.appendChild(newElement)
+        
+        // 5. Form Handling: Write a script to prevent the default submission of a 
+        // form with the ID form-example and instead console log the value of a text input field 
+        // within the form when the submit button is clicked.
+
+        
+        function handleSubmitForm (event) {
+
+            let textArea = document.getElementById('text-area')
+            event.preventDefault()
+            console.log(textArea.value)
+        }
+
+        // 6. Understanding Event Bubbling: Provide an example of stopping event bubbling when clicking 
+        // on a <button> contained within a <div> that both have click event listeners attached.
+
+        
+
+        // 7. Dynamic Page Styling: How can you toggle a class active on an element when it is clicked, 
+        // ensuring that if the class is present it gets removed, and if it's not, it gets added?
+        //we are going to give div content-area a class active 
+        let openDiv = document.getElementById('open-modal-btn')
+        let modal = document.getElementById('modal')
+        let closeCross = document.querySelector('close')
+        let closeButton = document.getElementById('close-modal-btn')
+        function openModal() {
+            console.log('Button is working')
+            modal.style.display = 'flex'
+        }
+
+        openDiv.addEventListener('click', openModal)
+
+
+    
+        function closeModal () {
+            modal.style.display = 'none'
+        }
+
+        closeButton.addEventListener('click', closeModal)
+        
+
+        // 8. Advanced Event Handling: Write JavaScript code to change the text content of 
+        // a paragraph element to display the current time when a button is clicked.
+
+        let displayButton = document.getElementById('display-time')
+        let textReplace = document.getElementById('textchange')
+        const time = new Date()
+        
+        
+        function displayTime () {
+
+            textReplace.innerText = time
+        }
+
+        displayButton.addEventListener('click', displayTime)
+
+        // 9. Event Listener Removal: How do you remove an event listener from an element, 
+        // and why might you need to do this?
+
+        displayButton.removeEventListener
+
+        // 10. Manipulating Attributes and Properties: Write JavaScript code to change the src attribute of an <img> element and explain the 
+        // difference between attributes and properties in the context of DOM elements.
+
+
+
+
+
+    </script>
+</body>
+
+</html>
