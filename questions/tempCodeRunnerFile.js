@@ -1,6 +1,13 @@
+async function fetchData() {
+//     try {
+//         const res = await fetch('https://api.example.com/nonexistent')
+//         const data = res.json()
+//         console.log(data)
 
-    let dictKeys = Object.keys(aDict)
-    let dictLength = dictKeys.length
-    let highestKey = aDict.name
-    
-}
+
+//     } catch (err) {
+//         console.log(err.message)
+//     }
+// }
+
+// fetchData()
